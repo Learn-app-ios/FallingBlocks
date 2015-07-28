@@ -13,6 +13,12 @@ import android.view.View;
 
 
 public class TetrisView extends View{
+    private static int tileSize = 60;  // size of individual tiles on gameboard
+
+    private static int WIDTH;  // screen width
+    private static int HEIGHT;  // screen height
+
+    public static long Score = 0;  // game score initialized to 0
 
     public TetrisView(Context context, AttributeSet attributeSet){
         super(context, attributeSet);

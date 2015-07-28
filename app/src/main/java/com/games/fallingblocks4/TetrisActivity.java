@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 public class TetrisActivity extends Activity {
     private static TetrisView tetrisView;
+    private static TextView textscore;
 
 
     @Override
@@ -20,8 +21,37 @@ public class TetrisActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tetris);
 
-        tetrisView = (TetrisView) findViewById(R.id.tv);
+        //tetrisView = (TetrisView) findViewById(R.id.tv);
+        //textscore = (TextView) findViewById(R.id.textsc)
+
+        // start new thread
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try{
+                    Thread.sleep(1000);
+                } catch (InterruptedException e){
+                    e.printStackTrace();
+                }
+            }
+        }).start();
     }
+
+
+
+    @Override
+    protected void onStart(){
+        super.onStart();
+    }
+
+
+
+    @Override
+    protected void onStop(){
+        super.onStop();
+    }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
